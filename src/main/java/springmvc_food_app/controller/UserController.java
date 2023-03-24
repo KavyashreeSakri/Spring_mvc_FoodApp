@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import springmvc_food_app.dao.UserDao;
@@ -41,16 +42,16 @@ public class UserController {
 	}
 
 	@RequestMapping("/loginUser")
-	public ModelAndView loginUser(@ModelAttribute User user) {
+	public ModelAndView loginUser(@ModelAttribute User user ) {
 		ModelAndView modelAndView = new ModelAndView();
 		User user2 = userDao.getUserByEmail(user.getEmail());
-		if (user.getEmail().equals(user2.getEmail()) && user.getPassword().equals(user2.getPassword())) {
+		if (user.getEmail().equals(user.getEmail()) && user.getPassword().equals(user.getPassword())) {
 			if (user2.getRole().equals("Manager")) {
 				modelAndView.setViewName("menu.jsp");
 			} else if (user2.getRole().equals("Staff")) {
 				modelAndView.setViewName("displaymenu.jsp");
 			} else if (user2.getRole().equals("Admin")) {
-				modelAndView.setViewName("displayBranches.jsp");
+				modelAndView.setViewName("adminhome.jsp");
 			}
 		} else
 			modelAndView.setViewName("home.jsp");
