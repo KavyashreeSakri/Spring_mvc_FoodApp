@@ -24,8 +24,16 @@ public class UserDao {
 	}
 
 	public User getUserByEmail(String email) {
-		Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email=?");
+		Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email=?1");
+		query.setParameter(1, email);
 		User user = (User) query.getSingleResult();
+		
+		return user;
+	}
+	public User getAdmin(String role) {
+		Query query=entityManager.createQuery("select u from User u where u.role=?1");
+		query.setParameter(1, role);
+		User user= (User)query.getSingleResult();
 		return user;
 	}
 
