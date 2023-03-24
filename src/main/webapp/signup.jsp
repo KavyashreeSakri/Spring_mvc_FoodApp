@@ -12,26 +12,25 @@
 
 	<form:form action="saveUser" modelAttribute="user">
 
-		<table>
-			<tr>
+		
 				Name :
 				<form:input path="name" />
-			</tr>
-			<tr>
+	
+			
 				Email :
 				<form:input path="email" />
-			</tr>
-			<tr>
+			
+			
 				Password :
 				<form:input path="password" />
-			</tr>
-			<tr>
+			
+			
 				Role :
 				<input type="radio" name="role" value="Manager">Manager
 				<input type="radio" name="role" value="Staff">Staff
 				<input type="radio" name="role" value="Admin">Admin
-			</tr>
-		</table>
+			
+		
 
 		<input type="submit">
 

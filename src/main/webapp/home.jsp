@@ -11,7 +11,7 @@
 		<tr>
 			<td>
 				<h1>
-					<a href="signup">Signup</a>
+					<a href="save">Signup</a>
 				</h1>
 			</td>
 		</tr>
