@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+
 
 import springmvc_food_app.dao.BranchDao;
 import springmvc_food_app.dao.UserDao;
@@ -59,6 +62,25 @@ public class BranchController {
 		
 	}
 	
+	@RequestMapping("/edit")
+	public ModelAndView editbranch(@RequestParam int id) {
+		ModelAndView modelAndView=new ModelAndView();
+		  Branch branch=dao.getBranchById(id);
+		  modelAndView.addObject(branch);
+		  modelAndView.setViewName("edit.jsp");
+		  return modelAndView;
+		  
+	}
+	
+	@RequestMapping("/update")
+	public ModelAndView update(@ModelAttribute Branch branch) {
+		  ModelAndView modelAndView=new ModelAndView();
+		  dao.updateBranch(branch);
+		  List<Branch> list = dao.getAllBranch();
+			 modelAndView.addObject("list", list);
+			 modelAndView.setViewName("displaybranch.jsp");
+			 return modelAndView;
+	}
 	
 
 }
