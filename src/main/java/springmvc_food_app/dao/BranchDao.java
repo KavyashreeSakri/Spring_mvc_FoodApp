@@ -36,9 +36,9 @@ public class BranchDao {
 		return eManager.find(Branch.class, id);
 	}
 
-	public Branch updateBranch(int id) {
+	public Branch updateBranch(Branch branch) {
 		EntityTransaction eTransaction = eManager.getTransaction();
-		Branch branch = eManager.find(Branch.class, id);
+
 		eTransaction.begin();
 		eManager.merge(branch);
 		eTransaction.commit();
