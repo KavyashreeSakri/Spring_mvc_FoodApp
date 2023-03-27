@@ -15,6 +15,8 @@
 <th>address</th>
 <th>phone_number</th>
 <th>email</th>
+<th>delete</th>
+<th>edit</th>
 
 
 </tr>

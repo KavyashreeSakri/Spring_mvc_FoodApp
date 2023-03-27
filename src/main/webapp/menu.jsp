@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+        <a href="createmenu"><button>Create Menu</button></a>
+        <a href="Displaymenu"><button>Display Menu</button></a>
 
 </body>
 </html>
