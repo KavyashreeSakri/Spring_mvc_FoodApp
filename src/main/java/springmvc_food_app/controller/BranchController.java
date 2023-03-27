@@ -81,6 +81,20 @@ public class BranchController {
 			 modelAndView.setViewName("displaybranch.jsp");
 			 return modelAndView;
 	}
+	@RequestMapping("/delete")
+	public ModelAndView delete(@RequestParam int id) {
+		ModelAndView modelAndView=new ModelAndView();
+		boolean b=dao.deleteBranch(id);
+		if(b) {
+			     List<Branch> list = dao.getAllBranch();
+				 modelAndView.addObject("list", list);
+				 modelAndView.setViewName("displaybranch.jsp");
+		}else {
+			      modelAndView.setViewName("adminhome.jsp");
+		}
+		return modelAndView;
+			
+	}
 	
 
 }

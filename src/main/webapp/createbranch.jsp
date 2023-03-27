@@ -9,14 +9,14 @@
 </head>
 <body>
    <form:form action="savebranch" modelAttribute="branch">
-  Name: <form:input path="name"/>
-  Address: <form:input path="address"/>
-   Phone number: <form:input path="phoneNumber"/>
-   Email: <form:input path="email"/>
+  Name: <form:input path="name"/><br>
+  Address: <form:input path="address"/><br>
+   Phone number: <form:input path="phoneNumber"/><br>
+   Email: <form:input path="email"/><br>
  
    <input type="submit">
    
    </form:form>
-   <a href="displaybranch.jsp"><button> Display Branches</button></a>
+
 </body>
 </html>
